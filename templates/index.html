@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}如果有传值,那么就显示传的值</title>
+    {% else %}
+        <title>{{ title }}如果没有传值,那就显示默认的</title>
+    {% endif %}
+</head>
+<body>
+    <h1>Hello  World , {{ user.name }}</h1>
+    {% for post in posts %}
+    <p>{{post.author.nickname}} says: <b>{{post.body}}</b></p>
+    {% endfor %}
+
+    {% extends "base.html" %}
+    {% block content %}
+    <h1>Hi, {{user.nickname}}!</h1>
+    {% for post in posts %}
+    <div><p>{{post.author.nickname}} says: <b>{{post.body}}</b></p></div>
+{% endfor %}
+{% endblock %}
+
+</body>
+
+<footer>
+    <h2>我是footer</h2>
+</footer>
+
+
+
+
+</html>

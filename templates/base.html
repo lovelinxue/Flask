@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}如果有传值,那么就显示传的值</title>
+    {% else %}
+        <title>{{ title }}如果没有传值,那就显示默认的</title>
+    {% endif %}
+</head>
+<body>
+    <div>Microblog: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
